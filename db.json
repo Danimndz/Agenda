@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "persons": [
+    {
+      "id": 1,
+      "name": "Daniel",
+      "last_name": "Mendez",
+      "age": 12,
+      "phone": "4491218268",
+      "occupation": "Programmer"
+    },
+    {
+      "id": 2,
+      "name": "Fernando",
+      "last_name": "Ruiz",
+      "age": 12,
+      "phone": "44988999",
+      "occupation": "Programmer"
+    },
+    {
+      "id": 3,
+      "name": "Sahid",
+      "last_name": "de la Rosa",
+      "age": 12,
+      "phone": "449123478",
+      "occupation": "Programmer"
+    }
+  ]
+}
