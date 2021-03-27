@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router";
-import { editUser } from "../Redux/actions/fetchData";
+import { editUser,addUser } from "../Redux/actions/fetchData";
 
 function PersonForm() {
   const { register, handleSubmit, errors } = useForm();
@@ -11,7 +11,7 @@ function PersonForm() {
   const history = useHistory();
 
   const onSubmit = (data) => {
-    dispatch(editUser(user.id, data));
+    user ? dispatch(editUser(user.id, data)) : dispatch(addUser(data));
     history.push("/");
   };
 
@@ -23,7 +23,7 @@ function PersonForm() {
           name="firstname"
           ref={register({ required: true })}
           type="text"
-          defaultValue={user.firstname}
+          defaultValue={user && user.firstname}
         />
         {errors.firstname && <p>This field is required</p>}
       </div>
@@ -34,7 +34,7 @@ function PersonForm() {
           name="lastname"
           ref={register({ required: true })}
           type="text"
-          defaultValue={user.lastname}
+          defaultValue={user && user.lastname}
         />
         {errors.lastname && <p>This field is required</p>}
       </div>
@@ -45,7 +45,7 @@ function PersonForm() {
           name="age"
           ref={register({ required: true })}
           type="number"
-          defaultValue={user.age}
+          defaultValue={user && user.age}
         />
         {errors.age && <p>This field is required</p>}
       </div>
@@ -56,7 +56,7 @@ function PersonForm() {
           name="phone"
           ref={register({ required: true })}
           type="text"
-          defaultValue={user.phone}
+          defaultValue={user && user.phone}
         />
         {errors.phone && <p>This field is required</p>}
       </div>
@@ -67,17 +67,10 @@ function PersonForm() {
           name="occupation"
           ref={register({ required: true })}
           type="text"
-          defaultValue={user.occupation}
+          defaultValue={user && user.occupation}
         />
         {errors.occupation && <p>This field is required</p>}
       </div>
-
-      {/* <input
-          name="id"
-          ref={register()}
-          type="hidden"
-          defaultValue={(user.id)}
-        /> */}
 
       <input type="submit" />
     </form>

@@ -9,6 +9,7 @@ function App() {
       <Router>
         <Route exact path="/" component={MainContainer} />
         <Route exact path='/form' component={PersonForm} />
+        <Route extact path='/add'></Route>
       </Router>
     </div>
   );

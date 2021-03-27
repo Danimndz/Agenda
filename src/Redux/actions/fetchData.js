@@ -12,6 +12,11 @@ export const fetchData = () => (dispatch) => {
   });
 };
 
-export const editUser = (id,data) => () => {
+export const editUser = (id, data) => () => {
   axios.put(`${url}/${id}`, data);
+};
+
+export const addUser = (data) => () => {
+  data.id = 5;
+  axios.post(url, data);
 };
