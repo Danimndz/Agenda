@@ -18,25 +18,25 @@
   },
   "persons": [
     {
-      "id": 1,
-      "name": "Daniel",
-      "last_name": "Mendez",
-      "age": 12,
+      "firstname": "Dani",
+      "lastname": "Altuzar",
+      "age": "13",
       "phone": "4491218268",
-      "occupation": "Programmer"
+      "occupation": "Salva Vidas",
+      "id": 1
     },
     {
       "id": 2,
-      "name": "Fernando",
-      "last_name": "Ruiz",
+      "firstname": "Fernando",
+      "lastname": "Ruiz",
       "age": 12,
       "phone": "44988999",
       "occupation": "Programmer"
     },
     {
       "id": 3,
-      "name": "Sahid",
-      "last_name": "de la Rosa",
+      "firstname": "Sahid",
+      "lastname": "de la Rosa",
       "age": 12,
       "phone": "449123478",
       "occupation": "Programmer"

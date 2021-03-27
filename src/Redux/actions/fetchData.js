@@ -8,5 +8,10 @@ export const fetchData = () => (dispatch) => {
       type: FETCH_PERSONS,
       payload: res.data,
     });
+    console.log("ajijo");
   });
+};
+
+export const editUser = (id,data) => () => {
+  axios.put(`${url}/${id}`, data);
 };
