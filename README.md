@@ -2,7 +2,7 @@
 To try the app:
 ### `install json-server` 
 then run:
-### `npx json-server --watch db.json -port #PORT`
+### `npx json-server --watch db.json --port #PORT`
 
 When inserting a new Person manually change the id on the fetchData.js file (located in Redux/actions) in the addUser method
 
