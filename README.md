@@ -1,3 +1,11 @@
+# TRY THE APP
+To try the app:
+### `install json-server` 
+then run:
+### `npx json-server --watch db.json -port #PORT`
+
+When inserting a new Person manually change the id on the fetchData.js file (located in Redux/actions) in the addUser method
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
