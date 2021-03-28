@@ -1,43 +1,72 @@
-import React from "react";
-import { Button, Table } from "react-bootstrap";
-// import { useHistory, useLocation } from "react-router";
-import { Link } from "react-router-dom";
-// import PersonForm from "./PersonForm";
-
+import React, { useState } from "react";
+import { FormModal } from "../components/FormModal";
+import {
+  FaEdit,
+  FaFileCsv,
+  FaPhoneAlt,
+  FaSortNumericUp,
+  FaUserAlt,
+} from "react-icons/fa";
+let data = {};
 const ListaPersonas = ({ persons }) => {
+  const [showModal, setShowModal] = useState(false);
+  const openModal = (person) => {
+    data = person;
+    setShowModal((value) => !value);
+  };
+
   return (
-    <Table striped bordered hover variant="dark">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Name</th>
-          <th>last name</th>
-          <th>Age</th>
-          <th>Phone</th>
-          <th>Occupation</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {persons.map((person, idx) => {
-          return (
-            <tr key={idx}>
-              <td>{person.id}</td>
-              <td>{person.firstname}</td>
-              <td>{person.lastname}</td>
-              <td>{person.age}</td>
-              <td>{person.phone}</td>
-              <td>{person.occupation}</td>
-              <td>
-                <Link to={{ pathname: "/form", state: person }}>
-                  <Button> Edit </Button>
-                </Link>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </Table>
+    <div className="div-container">
+      <FormModal
+        person={data}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
+      <table className="content-table">
+        <thead>
+          <tr>
+            <th> ID</th>
+            <th>
+              <FaUserAlt size={15} /> Name
+            </th>
+            <th>
+              <FaUserAlt size={15} /> Last Name
+            </th>
+            <th>
+              {" "}
+              <FaSortNumericUp size={15} /> Age
+            </th>
+            <th>
+              {" "}
+              <FaPhoneAlt size={15} /> Phone
+            </th>
+            <th>
+              <FaFileCsv size={15} /> Occupation
+            </th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {persons.map((person, idx) => {
+            return (
+              <tr key={idx}>
+                <td>{person.id}</td>
+                <td>{person.firstname}</td>
+                <td>{person.lastname}</td>
+                <td>{person.age}</td>
+                <td>{person.phone}</td>
+                <td>{person.occupation}</td>
+                <td>
+                  <button className="editBtn" onClick={() => openModal(person)}>
+                    <FaEdit size={20} color="grey" />
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

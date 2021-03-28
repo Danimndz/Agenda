@@ -8,7 +8,6 @@ export const fetchData = () => (dispatch) => {
       type: FETCH_PERSONS,
       payload: res.data,
     });
-    console.log("ajijo");
   });
 };
 
@@ -17,6 +16,7 @@ export const editUser = (id, data) => () => {
 };
 
 export const addUser = (data) => () => {
-  data.id = 5;
+  data.id = 11;
+  console.log("desde actions", data);
   axios.post(url, data);
 };
