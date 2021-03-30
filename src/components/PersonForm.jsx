@@ -10,7 +10,7 @@ function PersonForm({ user }) {
   const history = useHistory();
 
   const onSubmit = (data) => {
-    user ? dispatch(editUser(user.id, data)) : dispatch(addUser(data));
+    user ? dispatch(editUser(user.id_persona, data)) : dispatch(addUser(data));
     Redirect();
   };
   const Redirect = () => {
@@ -23,11 +23,11 @@ function PersonForm({ user }) {
         <label>First Name</label>
         <input
           className="input"
-          name="firstname"
-          placeholder={errors.firstname ? "This field is required" : "type..."}
+          name="nombre"
+          placeholder={errors.nombre ? "This field is required" : "type..."}
           ref={register({ required: true })}
           type="text"
-          defaultValue={user && user.firstname}
+          defaultValue={user && user.nombre}
         />
       </div>
 
@@ -35,49 +35,49 @@ function PersonForm({ user }) {
         <label>Last Name</label>
         <input
           className="input"
-          name="lastname"
-          placeholder={errors.lastname ? "This field is required" : "type..."}
+          name="apellidos"
+          placeholder={errors.apellidos ? "This field is required" : "type..."}
           ref={register({ required: true })}
           type="text"
-          defaultValue={user && user.lastname}
+          defaultValue={user && user.apellidos}
         />
       </div>
 
       <div className="form-group">
         <label>Age</label>
         <input
-          placeholder={errors.age ? "This field is required" : "type..."}
+          placeholder={errors.edad ? "This field is required" : "type..."}
           className="input"
-          name="age"
+          name="edad"
           ref={register({ required: true })}
           type="number"
-          defaultValue={user && user.age}
+          defaultValue={user && user.edad}
         />
       </div>
 
       <div className="form-group">
         <label>Phone Number</label>
         <input
-          placeholder={errors.phone ? "This field is required" : "type..."}
+          placeholder={errors.telefono ? "This field is required" : "type..."}
           className="input"
-          name="phone"
+          name="telefono"
           ref={register({ required: true })}
           type="text"
-          defaultValue={user && user.phone}
+          defaultValue={user && user.telefono}
         />
       </div>
 
       <div className="form-group">
-        <label>Occupation</label>
+        <label>Ocupation</label>
         <input
           placeholder={
-            errors.occupation ? <p> This field is required</p> : "type..."
+            errors.ocupacion ? <p> This field is required</p> : "type..."
           }
           className="input"
-          name="occupation"
+          name="ocupacion"
           ref={register({ required: true })}
           type="text"
-          defaultValue={user && user.occupation}
+          defaultValue={user && user.ocupacion}
         />
       </div>
 

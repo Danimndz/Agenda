@@ -50,12 +50,12 @@ const ListaPersonas = ({ persons }) => {
           {persons.map((person, idx) => {
             return (
               <tr key={idx}>
-                <td>{person.id}</td>
-                <td>{person.firstname}</td>
-                <td>{person.lastname}</td>
-                <td>{person.age}</td>
-                <td>{person.phone}</td>
-                <td>{person.occupation}</td>
+                <td>{person.id_persona}</td>
+                <td>{person.nombre}</td>
+                <td>{person.apellidos}</td>
+                <td>{person.edad}</td>
+                <td>{person.telefono}</td>
+                <td>{person.ocupacion}</td>
                 <td>
                   <button className="editBtn" onClick={() => openModal(person)}>
                     <FaEdit size={20} color="grey" />
